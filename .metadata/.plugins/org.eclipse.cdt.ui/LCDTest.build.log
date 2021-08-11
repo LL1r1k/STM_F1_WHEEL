@@ -1,0 +1,19 @@
+19:12:59 **** Incremental Build of configuration Debug for project LCDTest ****
+make -j8 all 
+arm-none-eabi-g++ -o "LCDTest.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\STMWorkspace\LCDTest\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCDTest.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: LCDTest.elf
+ 
+arm-none-eabi-objdump -h -S  LCDTest.elf  > "LCDTest.list"
+arm-none-eabi-objcopy  -O binary  LCDTest.elf  "LCDTest.bin"
+arm-none-eabi-size   LCDTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+  47208	    232	  15520	  62960	   f5f0	LCDTest.elf
+Finished building: default.size.stdout
+ 
+Finished building: LCDTest.bin
+ 
+Finished building: LCDTest.list
+ 
+
+19:13:00 Build Finished. 0 errors, 0 warnings. (took 1s.204ms)
+
